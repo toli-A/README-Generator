@@ -68,7 +68,7 @@ function writeFile(readME, data) {
 function init() {
   console.log(colors.america("Welcome to America's BEST README generator!"));
   inquirer.prompt(questions).then((response) => {
-    writeFile("NewREADME.md", generateMarkdown(response));
+    writeFile("sampleREADME.md", generateMarkdown(response));
   });
 }
 

@@ -63,6 +63,7 @@ ${data.tests}
 Contact At: 
 
 [GitHub](https://www.github.com/${data.username})
+
 ${data.email}`;
 }
 
