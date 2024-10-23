@@ -33,9 +33,10 @@ const questions = [
     name: "usage",
   },
   {
-    type: "input",
+    type: "list",
     message: colors.america("License: "),
     name: "license",
+    choices: ["Apache", "BOOST", "BSD3", "BSD2", "MIT"],
   },
   {
     type: "input",
@@ -47,18 +48,28 @@ const questions = [
     message: colors.america("Tests: "),
     name: "tests",
   },
+  {
+    type: "input",
+    message: colors.america("GitHub Username: "),
+    name: "username",
+  },
+  {
+    type: "input",
+    message: colors.america("Email: "),
+    name: "email",
+  }
 ];
 
 // TODO: Create a function to write README file
 function writeFile(readME, data) {
   fs.writeFile(readME, data, (err) =>
-    err ? console.log(err) : console.log(colors.america("README Generated"))
+    err ? console.log(err) : console.log(colors.america("README Generated!"))
   );
 }
 
 // TODO: Create a function to initialize app
 function init() {
-  console.log("Welcome to Americas BEST README generator.");
+  console.log(colors.america("Welcome to America's BEST README generator!"));
   inquirer.prompt(questions).then((response) => {
     writeFile("NewREADME.md", generateMarkdown(response));
   });
