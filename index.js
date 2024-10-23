@@ -1,10 +1,11 @@
-// TODO: Include packages needed for this application
-import fs, { write } from "fs";
+// Include packages needed for this application
+
+import fs from "fs";
 import inquirer from "inquirer";
 import colors from "colors";
 import generateMarkdown from "./utils/generateMarkdown.js";
 
-// TODO: Create an array of questions for user input
+// Create an array of questions for user input
 
 const questions = [
   {
@@ -16,11 +17,6 @@ const questions = [
     type: "input",
     message: colors.america("Project Description: "),
     name: "description",
-  },
-  {
-    type: "input",
-    message: colors.america("Table of Contents: "),
-    name: "tableOfContents",
   },
   {
     type: "input",
@@ -57,17 +53,18 @@ const questions = [
     type: "input",
     message: colors.america("Email: "),
     name: "email",
-  }
+  },
 ];
 
-// TODO: Create a function to write README file
+// Create a function to write README file
 function writeFile(readME, data) {
   fs.writeFile(readME, data, (err) =>
     err ? console.log(err) : console.log(colors.america("README Generated!"))
   );
 }
 
-// TODO: Create a function to initialize app
+// Create a function to initialize app
+
 function init() {
   console.log(colors.america("Welcome to America's BEST README generator!"));
   inquirer.prompt(questions).then((response) => {
